@@ -1,10 +1,10 @@
 {
-  "name": "my-project",
+  "name": "Trillo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Trillo app",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "start": "node-sass sass/main.scss css/style.css -w"
   },
   "author": "",
   "license": "ISC",
