@@ -183,7 +183,7 @@
       margin-right: 0;
       width: 1.5rem;
       height: 1.5rem;
-      margin-bottom: .7rem;
+      margin-bottom: 0.7rem;
     }
   }
 }
@@ -256,7 +256,6 @@
     align-items: center;
     @media only screen and (max-width: $bp-small) {
       padding: 0 1.5rem;
-      
     }
     &--average {
       font-size: 2.25rem;
@@ -270,12 +269,10 @@
       font-size: 0.8rem;
       text-transform: uppercase;
       @media only screen and (max-width: $bp-small) {
-        font-size: .8rem;
+        font-size: 0.8rem;
       }
     }
-    
   }
-  
 }
 
 //Button inline
@@ -347,14 +344,17 @@
       width: 1rem;
       margin-right: 0.7rem;
 
-      // Older browsers
-      // background-image: url(../img/chevron-thin-right.svg);
-      // background-size: cover;
+      //Older browsers
+      background-image: url(../img/chevron-thin-right.svg);
+      background-size: cover;
 
       //Newer browsers - masks
-      background-color: var(--color-primary);
-      -webkit-mask-image: url(../img/chevron-thin-right.svg);
-      -webkit-mask-size: cover;
+      @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+        background-color: var(--color-primary);
+        -webkit-mask-image: url(../img/chevron-thin-right.svg);
+        -webkit-mask-size: cover;
+        background-image: none;
+      }
     }
   }
 }
